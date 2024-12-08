@@ -35,7 +35,7 @@ pipeline {
                                 cat deployment.yaml
                                 git add .
                                 git commit -m "Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}"
-                                git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main
+                                git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/CD_REPO.git HEAD:main
                             """
                         }
                     }
