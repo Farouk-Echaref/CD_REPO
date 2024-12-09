@@ -1,16 +1,20 @@
 pipeline {
-    agent{
+    // Uncomment this section if you'd like to use a different agent configuration
+    // agent {
+    //     node {
+    //         label 'docker_agent_python'
+    //     }
+    // }
+
+    agent {
         node {
-            label 'docker_agent_python'
+            label 'my-host-agent' // Use the label assigned in the configuration
         }
     }
 
     environment {
         GIT_CREDENTIALS_ID = 'github' // ID for GitHub credentials
     }
-
-    // Declare `app` globally
-    def app
 
     stages {
         stage('Clone Repository') {
